@@ -11,9 +11,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "ant-design-vue": "^4.2.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -22,6 +26,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.9.1",
+    "vitepress": "^1.1.4",
     "vue-tsc": "^2.0.6"
   }
 }

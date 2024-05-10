@@ -3,18 +3,19 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:58:06
- * @LastEditTime: 2024-05-07 11:27:56
+ * @LastEditTime: 2024-05-07 11:49:04
 -->
 <template>
-    <button @click="add">+</button>
+    <Button @click="add">+</Button>
     <h1>
         HCounter: {{count}}
     </h1>
-    <button @click="minus">-</button>
+    <Button @click="minus">-</Button>
 </template> 
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import {Button} from "ant-design-vue"
 
 const props = defineProps<{defaultValue?:number}>()
 
