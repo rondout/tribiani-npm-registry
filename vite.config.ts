@@ -3,16 +3,24 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:52:11
- * @LastEditTime: 2024-05-07 10:59:30
+ * @LastEditTime: 2024-05-10 11:58:16
  */
-import { defineConfig } from "vite";
+import { defineConfig, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue(), dts()],
+export const commonViteConfig:UserConfig = {
+  plugins: [
+    dts()],
+  resolve: {
+    alias: {
+      "@lib":resolve(__dirname, "./lib"),
+      "@":resolve(__dirname, "./src"),
+      "@libComponents":resolve(__dirname, "./lib/components"),
+      "@components":resolve(__dirname, "./src/components"),
+    }
+  },
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -33,6 +41,15 @@ export default defineConfig({
           vue: "Vue",
         },
       },
+      
     },
   },
+}
+// https://vitejs.dev/config/
+export default defineConfig({
+  ...commonViteConfig,
+  plugins:[
+    vue(), 
+    dts()
+  ]
 });

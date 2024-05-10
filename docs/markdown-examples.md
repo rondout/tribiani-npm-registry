@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 11:46:53
- * @LastEditTime: 2024-05-07 11:50:04
+ * @LastEditTime: 2024-05-10 11:58:40
 -->
 # Markdown Extension Examples
 
@@ -14,10 +14,10 @@ This page demonstrates some of the built-in markdown extensions provided by Vite
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
 <script setup>
-import { HCounter } from "../lib/main"
+import HCounter from "@/components/test/TestCounter.vue"
 </script>
 
-<HCounter :defaultValue="9" />
+<HCounter />
 
 **Input**
 

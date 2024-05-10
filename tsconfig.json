@@ -20,7 +20,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@/*":["./src/*"],
+      "@libComponents/*":["./lib/components/*"],
+      "@components/*":["./src/components/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
