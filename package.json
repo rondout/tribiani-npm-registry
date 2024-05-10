@@ -1,10 +1,12 @@
 {
-  "name": "tribiani-npm-registry",
+  "name": "gl-npm",
   "private": false,
-  "version": "0.0.14",
+  "version": "0.0.02",
   "type": "module",
+  "repository": {},
   "types": "dist/lib/main.d.ts",
   "module": "dist/main.es.js",
+  "main": "dist/lib",
   "files": [
     "dist"
   ],

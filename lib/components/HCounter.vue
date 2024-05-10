@@ -3,10 +3,10 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:58:06
- * @LastEditTime: 2024-05-10 11:36:45
+ * @LastEditTime: 2024-05-10 12:02:49
 -->
 <template>
-    <Button @click="add">+</Button>
+    <Button type="primary" @click="add">+</Button>
     <h1>
         HCounter: {{count}}
     </h1>

@@ -3,8 +3,13 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 11:46:53
- * @LastEditTime: 2024-05-10 11:58:40
+ * @LastEditTime: 2024-05-10 16:31:58
 -->
+<Provider :theme="{token: {colorPrimary:'#3f51b5'}}" />
+
+<script setup>
+import HCounter from "@/components/test/TestCounter.vue"
+</script>
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
@@ -13,11 +18,8 @@ This page demonstrates some of the built-in markdown extensions provided by Vite
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
-<script setup>
-import HCounter from "@/components/test/TestCounter.vue"
-</script>
 
-<HCounter />
+  <HCounter />
 
 **Input**
 

@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:52:11
- * @LastEditTime: 2024-05-10 11:58:16
+ * @LastEditTime: 2024-05-10 18:39:40
  */
 import { defineConfig, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -12,7 +12,8 @@ import { resolve } from "path";
 
 export const commonViteConfig:UserConfig = {
   plugins: [
-    dts()],
+    dts()
+  ],
   resolve: {
     alias: {
       "@lib":resolve(__dirname, "./lib"),
@@ -23,6 +24,7 @@ export const commonViteConfig:UserConfig = {
   },
   build: {
     lib: {
+      formats:['es'],
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "lib/main.ts"),
       name: "MyLib",
@@ -34,7 +36,7 @@ export const commonViteConfig:UserConfig = {
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ["vue"],
+      external: ["vue", 'ant-design-vue'],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
