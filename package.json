@@ -1,18 +1,18 @@
 {
-  "name": "gl-npm",
+  "name": "@gl/main",
   "private": false,
-  "version": "0.0.02",
+  "version": "0.0.01",
   "type": "module",
   "repository": {},
   "types": "dist/lib/main.d.ts",
   "module": "dist/main.es.js",
-  "main": "dist/lib",
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "pub": "vue-tsc && vite build && npm publish",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/node": "^20.12.10",
     "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.77.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.9.1",

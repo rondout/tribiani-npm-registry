@@ -18,6 +18,7 @@
     "jsx": "preserve",
     /* Linting */
     "strict": true,
+    "strictNullChecks": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
@@ -35,7 +36,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "lib/**/*.ts",
-    "lib/**/*.vue"
+    "lib/**/*.vue",
+    "dist/**/*.ts",
+    "dist/**/*.vue"
   ],
   "references": [
     {
