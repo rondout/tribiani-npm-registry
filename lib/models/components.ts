@@ -41,7 +41,7 @@ export interface GlRadioButtonProps<T = any> {
   // 是否以大写的方式展示label，默认为true
   uppercase?: boolean;
   // 尺寸
-  size?: 'large' | 'medium';
+  size?: SizeType;
   // 是否展示tooltip
   showTooltip?: boolean;
   // 一行最多展示多少个tab

@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-10 10:41:15
- * @LastEditTime: 2024-05-11 09:58:46
+ * @LastEditTime: 2024-05-13 14:37:03
 -->
 <script setup lang="ts">
 import Main from '@components/Main.vue'
@@ -32,5 +32,10 @@ const changeLocale = () => {
   </ConfigProvider>
 </template>
 
-<style scoped>
+<style>
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 </style>

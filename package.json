@@ -1,7 +1,7 @@
 {
   "name": "@gl/main",
   "private": false,
-  "version": "0.0.01",
+  "version": "0.0.03",
   "type": "module",
   "repository": {},
   "types": "dist/lib/main.d.ts",
@@ -19,12 +19,19 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^4.3.0",
+    "@gl/main": "^0.0.3",
     "ant-design-vue": "^4.2.1",
+    "axios": "^1.6.8",
+    "js-cookie": "^3.0.5",
+    "jsencrypt": "^3.3.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.12.10",
     "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^9.2.0",
     "sass": "^1.77.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",

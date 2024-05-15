@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:52:11
- * @LastEditTime: 2024-05-10 18:39:40
+ * @LastEditTime: 2024-05-15 09:06:32
  */
 import { defineConfig, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -36,7 +36,7 @@ export const commonViteConfig:UserConfig = {
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ["vue", 'ant-design-vue'],
+      external: ["vue", 'ant-design-vue', 'axios'],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
@@ -46,6 +46,31 @@ export const commonViteConfig:UserConfig = {
       
     },
   },
+  envDir: "./env",
+  server: {
+    proxy: {
+      '/cloud-basic': {
+        // @ts-ignore
+          target: "https://cloud-sdwan-dev.gl-inet.cn",
+          changeOrigin: true, 
+      },
+      '/cloud-api': {
+        // @ts-ignore
+          target: "https://cloud-sdwan-dev.gl-inet.cn",
+          changeOrigin: true,
+      },
+      '/cloud': {
+        // @ts-ignore
+          target: "https://cloud-sdwan-dev.gl-inet.cn",
+          changeOrigin: true,
+      },
+      '/sdwan': {
+        // @ts-ignore
+          target: "https://cloud-sdwan-dev.gl-inet.cn",
+          changeOrigin: true,
+      },
+  },
+  }
 }
 // https://vitejs.dev/config/
 export default defineConfig({

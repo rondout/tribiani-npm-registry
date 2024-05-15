@@ -3,15 +3,15 @@
  * @Author: warren
  * @LastEditors: shufei.han
  * @Date: 2023-07-05 10:03:40
- * @LastEditTime: 2024-05-10 16:38:52
+ * @LastEditTime: 2024-05-14 17:46:44
  */
 
 import { AnyObject } from "@lib/models"
 
 /**
  * @description: 拷贝数据
- * @param {*} obj
- * @return {*}
+ * @param {T} obj
+ * @return {T}
  */
 export function deepCopy<T> (obj:T): T {
     const result = <T>(Array.isArray(obj) ? [] : {})
