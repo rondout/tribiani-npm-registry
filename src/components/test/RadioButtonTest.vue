@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-13 15:34:37
- * @LastEditTime: 2024-05-15 09:08:38
+ * @LastEditTime: 2024-05-16 15:42:55
 -->
 <template>
     <!-- <GlSvg name="gl-icon-bars-regular" /> -->
@@ -12,7 +12,6 @@
 </template> 
 
 <script setup lang="ts">
-import { GlSvg, GlRadioButtons } from "@gl/main";
 import RadioButtons from "@libComponents/formFields/glRadioButtons.vue"
 import { reactive } from "vue"
 

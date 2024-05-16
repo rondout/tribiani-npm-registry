@@ -13,6 +13,9 @@ declare module "axios" {
         formData?: boolean;
         apiPrefix?: string;
     }
+    interface AxiosResponse<T> {
+        info?: T
+    }
 }
 
 export class HttpService {
@@ -130,15 +133,13 @@ export class HttpService {
 
     public async httpApiPrefixCloudBasic<T = any, D = any> (data: AxiosRequestConfig<D>): Promise<BaseResponse<T>> {
         // @ts-ignore
-        data.apiPrefix = '/cloud-basic'
+        data.apiPrefix =  this.apiPrefix
         return this.request<T, D>(data)
     }
 
     public async get<T = any, D = any>(url: string, config?: AxiosRequestConfig<D>) {
-        const result = await this.service.get(url, config)
-        console.log("GET_RESULT", result);
-        // @ts-ignore
-        return result.info as T
+        const result = await this.service.get<T>(url, config)
+        return result.info
     }
 
     public async getWithPrefix<T = any, D = any>(url: string, config: AxiosRequestConfig<D> = {}) {
@@ -146,8 +147,7 @@ export class HttpService {
     }
 
     public async post<T = any, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>) {
-        const result = await this.service.post(url, data, config)
-        console.log("POST_RESULT", result);
+        const result = await this.service.post<T>(url, data, config)
         // @ts-ignore
         return result.info as T
     }
@@ -158,8 +158,7 @@ export class HttpService {
 
     
     public async put<T = any, D = any>(url: string, data?:D, config?: AxiosRequestConfig<D>) {
-        const result = await this.service.put(url, data, config)
-        console.log("GET_RESULT", result);
+        const result = await this.service.put<T>(url, data, config)
         // @ts-ignore
         return result.info as T
     }
@@ -169,9 +168,8 @@ export class HttpService {
     }
 
     
-    public async delete<T = any, D = any>(url: string, data?:D, config?: AxiosRequestConfig<D>) {
-        const result = await this.service.put(url, data, config)
-        console.log("GET_RESULT", result);
+    public async delete<T = any, D = any>(url: string, config?: AxiosRequestConfig<D>) {
+        const result = await this.service.delete<T>(url, config)
         // @ts-ignore
         return result.info as T
     }

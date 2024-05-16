@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-04-11 09:38:44
- * @LastEditTime: 2024-05-11 10:08:52
+ * @LastEditTime: 2024-05-16 16:18:00
 -->
 <template>
     <Drawer :rootClassName="customClass"
@@ -22,7 +22,7 @@
                     </div>
                 </slot>
                 <div class="base-drawer-close" @click="handleClose">
-                    <GlSvg name="gl-icon-wrong" class="base-drawer-close-icon" />
+                    <GlSvg name="gl-npm-xmark-solid" class="base-drawer-close-icon" />
                 </div>
             </div>
         </template>
@@ -64,6 +64,7 @@ import type { SizeType } from 'ant-design-vue/es/config-provider'
 import { computed, ref } from 'vue'
 import { Drawer, Button } from 'ant-design-vue';
 import useGlobalConfigInject from '@lib/hooks/useGlobalConfig';
+import GlSvg from '../base/glSvg.vue';
 // const { t } = i18n.global
 const {t} = useGlobalConfigInject()
 

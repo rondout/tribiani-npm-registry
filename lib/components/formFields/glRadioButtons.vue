@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-03-29 18:09:52
- * @LastEditTime: 2024-05-14 15:04:45
+ * @LastEditTime: 2024-05-16 16:17:40
 -->
 <template>
     <div
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div v-if="multiLine" :class="{'multiline-trigger': true, 'multiline-trigger-open': showMore}" @click="toggleShowMore">
-            <GlSvg name="gl-icon-bars-regular" />
+            <GlSvg name="gl-npm-bars-regular" />
         </div>
     </div>
 </template>
