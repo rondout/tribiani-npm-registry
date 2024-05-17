@@ -1,4 +1,7 @@
-/**
+import { AnyObject, BaseData } from "@lib/models";
+import ClipboardJS from 'clipboard'
+
+/** * 
  * @description: 获取字符串长度
  */
 export const getCharRealLength = (str: string) => {
@@ -76,8 +79,18 @@ export function debounce(func: Function, wait = 300, immediate = false) {
   };
 }
 
-import { AnyObject, BaseData } from "@lib/models";
-
+export const throttle = (fn: Function, delay: number): Function => {
+  let throttleTimer: NodeJS.Timeout
+  return (...args: unknown[]) => {
+      if (throttleTimer) {
+          return
+      }
+      throttleTimer = setTimeout(() => {
+          fn.apply(this, args)
+          throttleTimer = null
+      }, delay)
+  }
+}
 /**
  * @description: 深拷贝数据
  * @param {T} obj
@@ -298,3 +311,28 @@ export const filterModelList = <T extends {label?: string}>(modelList: T[]) => {
   });
   return arr;
 };
+
+export function copyText (text:string) {
+  return new Promise((resolve, reject) => {
+    const fakeElement = document.createElement('button')
+    const clipboard = new ClipboardJS(fakeElement, {
+      text: () => text,
+      action: () => 'copy',
+    })
+    clipboard.on('success', (e) => {
+      resolve(e)
+      clipboard.destroy()
+    })
+
+    clipboard.on('error', (e) => {
+      reject(e)  
+      clipboard.destroy()
+    })
+    fakeElement.click()
+  })
+}
+// 将mac地址转为大写并隔两个加一个冒号
+export function macAddrFormatter (mac: string) {
+  if (!mac) return ''
+  return mac.toUpperCase().replace(/(.{2})/g, '$1:').slice(0, 17)
+}

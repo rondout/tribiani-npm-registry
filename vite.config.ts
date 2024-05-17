@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:52:11
- * @LastEditTime: 2024-05-15 09:06:32
+ * @LastEditTime: 2024-05-17 12:20:24
  */
 import { defineConfig, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -48,6 +48,7 @@ export const commonViteConfig:UserConfig = {
   },
   envDir: "./env",
   server: {
+    host:'0.0.0.0',
     proxy: {
       '/cloud-basic': {
         // @ts-ignore
