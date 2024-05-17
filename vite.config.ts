@@ -3,7 +3,7 @@
  * @Author: shufei.han
  * @LastEditors: shufei.han
  * @Date: 2024-05-07 10:52:11
- * @LastEditTime: 2024-05-17 12:20:24
+ * @LastEditTime: 2024-05-17 17:46:09
  */
 import { defineConfig, UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -26,17 +26,16 @@ export const commonViteConfig:UserConfig = {
     lib: {
       formats:['es'],
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "lib/main.ts"),
+      entry: {main: resolve(__dirname, "lib/main.ts"), tools: resolve(__dirname, "lib/tools/index.ts")},
       name: "MyLib",
       // the proper extensions will be added
-      // fileName: 'my-lib',
       fileName(format, entryName) {
         return `${entryName}.${format}.js`;
       },
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
-      external: ["vue", 'ant-design-vue', 'axios'],
+      external: ["vue", 'ant-design-vue', 'axios', 'jsencrypt'],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {

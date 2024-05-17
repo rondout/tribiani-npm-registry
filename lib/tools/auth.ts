@@ -16,7 +16,7 @@ const FRONT_TOKEN_CUSTOM = 'FRONT_TOKEN_CUSTOM'
 
 /* 判断用哪个 token名称 */
 function getTokenName () {
-    return isGLCompany() ? FRONT_TOKEN : FRONT_TOKEN_CUSTOM
+    return isGLCompany() ? FRONT_TOKEN : FRONT_TOKEN_CUSTOM             
 }
 
 export function getToken () {

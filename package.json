@@ -1,21 +1,34 @@
 {
   "name": "@gl/main",
   "private": false,
-  "version": "0.0.09",
+  "version": "0.0.12",
   "type": "module",
   "repository": {},
   "types": "dist/lib/main.d.ts",
   "module": "dist/main.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.es",
+      "types": "./dist/lib/main.d.ts"
+    },
+    "./tools": {
+      "import": "./dist/tools.es",
+      "types": "./dist/lib/tools/index.d.ts"
+    },
+    "./style.css": {
+      "import" :"./dist/style.css"
+    }
+  },
   "files": [
     "dist"
   ],
-  "scripts": {    
+  "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "pub": "vue-tsc && vite build && npm publish",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs", 
+    "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
